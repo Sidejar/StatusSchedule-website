@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800;900&display=swap");
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+* {
+  @apply m-0 p-0  box-border;
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  @apply m-0 p-0;
+}
+/* typography */
+
+/* heading */
+.h1 {
+  @apply text-[96px] font-semibold leading-[56px] tracking-[-0.96px];
+}
+.h2 {
+  @apply text-[64px] font-semibold leading-[64px] tracking-[-0.96px];
+}
+.h3 {
+  @apply text-[36px] font-semibold leading-[40px] tracking-[-0.72px];
+}
+.h4 {
+  @apply text-[24px] font-semibold leading-[40px] tracking-[-0.48px];
+}
+
+/*paragraphs*/
+.p-xsmall {
+  @apply text-[12px] font-semibold leading-[24px] tracking-[-0.24px];
+}
+.p-small {
+  @apply text-[14px] font-normal leading-[16px] tracking-[-0.28px];
+}
+.p-medium {
+  @apply text-[16px] font-semibold leading-[28px] tracking-[0.1px];
+}
+.p-medium1 {
+  @apply text-[16px] font-medium leading-[24px] tracking-[-0.32px];
+}
+.p-large {
+  @apply text-[18px] font-semibold leading-[24px] tracking-[-0.16px];
+}
