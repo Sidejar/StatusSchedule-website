@@ -4,10 +4,17 @@ import { TextTag } from "../Typography"
 import RightArrowIcon from "../../assets/images/icons/rightArrowIcon.svg"
 import { Link } from "gatsby"
 
-const Index = ({ className, title, price, description1, description2 }) => {
+const Index = ({
+  className,
+  title,
+  duration,
+  price,
+  description1,
+  description2,
+}) => {
   return (
     <div
-      className={`w-[344px] h-[543px] p-[42px] rounded-3xl border hover:border-none border-solid border-Grey-300 hover:bg-Purple hover:text-White transition-all ease-in-out duration-200 ${className}`}
+      className={`w-[344px] h-[543px] p-[42px] rounded-3xl border hover:border-none border-solid border-Grey-300 hover:bg-Purple hover:text-White transition-all ease-in-out duration-200 mt-[42px] hover:mt-0 ${className}`}
     >
       <div className="flex flex-col items-center">
         <TextTag
@@ -29,7 +36,7 @@ const Index = ({ className, title, price, description1, description2 }) => {
             <TextTag as="h1" text={price} className={"h1 mb-6"} color={""} />
             <TextTag
               as="p"
-              text={"Per year"}
+              text={duration}
               className={
                 "p-large !font-normal !leading-[28px] !tracking-[-0.54px] mb-[42px]"
               }

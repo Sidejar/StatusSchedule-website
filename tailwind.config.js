@@ -11,6 +11,7 @@ module.exports = {
         PrimaryPurple: "rgba(90, 80, 216, 0.1)",
         "Grey-300": "rgba(233, 233, 233, 1)",
         "Grey-400": "rgba(96, 96, 96, 1)",
+        "Grey-500": "rgba(255, 255, 255, 0.15)",
         "Blue-400": "rgba(199, 202, 205, 1)",
         "Green-400": "rgba(219, 244, 226, 1)",
         "Green-500": "rgba(15, 138, 49, 1)",
