@@ -12,7 +12,7 @@ const Index = ({ question, description, link, linkText }) => {
         }
         color={""}
       />
-      <p className="p-medium !font-normal text-Grey-400 mb-0">
+      <p className="p-medium !font-normal text-Grey-400 mb-0 inter">
         {description} {link && <a className="text-Misty-500">{linkText}</a>}
       </p>
     </div>

@@ -38,6 +38,7 @@ import RunningIcon from "../../assets/images/icons/runningIcon.svg"
 import MailIcon from "../../assets/images/icons/mailIcon.svg"
 import CelebrationIcon from "../../assets/images/icons/celebrationIcon.svg"
 
+import StatusUnderline from "../../assets/images/icons/statusUnderline.svg"
 import HouseIcon from "../../assets/images/icons/houseIcon.svg"
 import PlusIcon from "../../assets/images/icons/plusIcon.svg"
 import BusIcon from "../../assets/images/icons/busIcon.svg"
@@ -47,6 +48,8 @@ import MeetingIcon from "../../assets/images/icons/meetingIcon.svg"
 import CalendarIcon from "../../assets/images/icons/calendarIcon.svg"
 import LineVector1 from "../../assets/images/icons/lineVector1.svg"
 import siteTitle from "../../assets/images/icons/siteTitle.svg"
+import UserStatusVector from "../../assets/images/icons/userStatusVector.svg"
+import ScheduleVector from "../../assets/images/icons/scheduleVector.svg"
 
 const userData = [
   {
@@ -146,8 +149,13 @@ const userData = [
     userStatus: "Birthday",
   },
 ]
-
-const Index = () => {
+const Index = ({ isMenuOpen }) => {
+  // const userStatus = {
+  //   backgroundImage: `url("../../assets/images/icons/userStatusVector.svg")`,
+  //   backgroundRepeat: "no-repeat",
+  //   backgroundSize: "cover",
+  //   backgroundPosition: "center",
+  // }
   const [showUserStatus, setShowUserStatus] = useState(false)
 
   const toggleUserStatus = () => {
@@ -158,13 +166,12 @@ const Index = () => {
   const toggleButton = () => {
     setIsToggled(!isToggled)
   }
-
   return (
     <div>
-      <div className="max-w-[1440px] mx-auto md:px-[180px]">
+      <div className="max-w-[1440px] mx-auto lg:px-[180px] md:px-[120px] sm:px-[80px] px-[16px]">
         {/* Hero section */}
-        <div className="flex flex-col items-center ">
-          <h2 className="h2 mb-[29px]">
+        <div className="flex flex-col items-center text-center">
+          <h2 className="md:h2 h2-res mb-[29px] ">
             Automate your slack
             <TextTag
               as="span"
@@ -176,7 +183,7 @@ const Index = () => {
           <TextTag
             as="p"
             text={"No more forgetting to set a Slack status when you’re away."}
-            className="p-medium !font-normal mb-0"
+            className="p-medium !font-normal mb-0 inter"
             color="text-Grey-400"
           />
           <TextTag
@@ -195,7 +202,10 @@ const Index = () => {
           </button>
         </div>
         {/* User Status */}
-        <div className="md:pt-124px md:pb-[130px] mb-[60px]">
+        <div
+          className="md:pt-124px md:mb-[203px] md:mt-[60px] mb-[166px] flex flex-wrap justify-around"
+          // style={userStatus}
+        >
           {userData?.map((data, index) => (
             <div key={index}>
               <UserStatus
@@ -214,8 +224,8 @@ const Index = () => {
           ))}
         </div>
         {/* Build Schedule */}
-        <div className="flex !items-center gap-[116px] mb-[106px]">
-          <div className="w-[436px] max-h-[470px] py-10 px-7 rounded-[24px] border border-solid border-Grey-300">
+        <div className="flex !items-center md:flex-nowrap flex-wrap md:gap-[116px] gap-[88px] md:mb-[106px] mb-[135px]">
+          <div className="md:w-[436px] w-full max-h-[470px] py-10 px-7 rounded-[24px] border border-solid border-Grey-300">
             <div className="flex mb-10 justify-between">
               <TextTag
                 as="h4"
@@ -226,7 +236,7 @@ const Index = () => {
                 className="group  relative object-contain cursor-pointer"
                 onClick={toggleUserStatus}
               >
-                <div className="w-[166px] p-medium1 text-White absolute z-50 top-[-52px] left-[-116.25px] hidden group-hover:inline-block py-[7px] pl-[12px] pr-[10px] transition-opacity duration-300 bg-Black rounded-[4px]">
+                <div className="w-[166px] p-medium1 text-White absolute z-50 top-[-52px] left-[-116.25px] hidden group-hover:inline-block py-[7px] pl-[12px] pr-[10px] transition-opacity duration-300 bg-Black rounded-[4px] inter">
                   Create New Status
                 </div>
                 <img
@@ -307,7 +317,7 @@ const Index = () => {
           </div>
         </div>
         {/* Connect Calender */}
-        <div className="flex !items-center gap-[116px] mb-[218px]">
+        <div className="flex !items-center md:flex-nowrap flex-wrap-reverse md:gap-[116px] xsm:gap-[80px] gap-[180px] md:mb-[218px] mb-[180px]">
           <div className="">
             <TextTag
               as="h3"
@@ -324,10 +334,10 @@ const Index = () => {
               color={"Grey-400"}
             />
           </div>
-          <div className="w-[436px] h-[475px] py-10 px-7 rounded-[24px] border border-solid border-Grey-300">
-            <div className="flex mb-[35px] gap-4">
+          <div className="md:w-[436px] w-full h-[475px] py-10 md:px-7 pr-[19px] pl-[28px] rounded-[24px] border border-solid border-Grey-300">
+            <div className="flex flex-wrap mb-[35px] gap-4">
               <TextTag as="h4" text={"Google Calendar"} className={"h4"} />
-              <button className="p-xsmall rounded-[8px] py-[2px] px-2 text-Green-500 bg-Green-400">
+              <button className="p-xsmall rounded-[8px] py-[2px] px-2 text-Green-500 bg-Green-400 inter">
                 Connected
               </button>
             </div>
@@ -387,12 +397,12 @@ const Index = () => {
             className={"h3 !leading-normal !tracking-[-1.08px] mb-8"}
             color={""}
           />
-          <div className="flex items-center gap-8 mb-16">
+          <div className="flex items-center gap-8 md:mb-16 mb-[60px]">
             <TextTag
               as="p"
               text={"Monthly"}
-              className={`p-medium mb-0 ${
-                isToggled ? "text-Grey-400 !font-normal" : "text-Black"
+              className={`p-medium mb-0 inter ${
+                isToggled ? "text-Grey-400 !font-normal " : "text-Black"
               }`}
             />
             <label className="flex items-center cursor-pointer">
@@ -402,9 +412,15 @@ const Index = () => {
                   className="hidden"
                   onChange={toggleButton}
                 />
-                <div className="w-16 h-8 bg-PrimaryPurple rounded-full shadow-inner"></div>
                 <div
-                  className={`toggle__dot absolute w-6 h-6 bg-Purple rounded-full shadow inset-y-0 top-1 left-[10px] ${
+                  className={
+                    isToggled
+                      ? "w-16 h-8 bg-PrimaryPurple rounded-full "
+                      : "w-16 h-8 bg-White rounded-full border border-solid border-Grey-300"
+                  }
+                ></div>
+                <div
+                  className={`toggle__dot absolute w-6 h-6 bg-Purple rounded-full shadow inset-y-0 top-1 left-[8px] ${
                     isToggled ? "translate-x-full bg-Purple" : "bg-gray-300"
                   }`}
                 ></div>
@@ -413,70 +429,41 @@ const Index = () => {
             <TextTag
               as="p"
               text={"Annual"}
-              className={`p-medium mb-0 ${
+              className={`p-medium mb-0 inter ${
                 isToggled ? "text-Black" : "text-Grey-400 !font-normal"
               }`}
               color={""}
             />
           </div>
-          {isToggled ? (
-            <div className="flex gap-6">
-              <PringOption
-                className=""
-                title="Free Plan"
-                duration="Per year"
-                price="0"
-                description1="1 active autostatus"
-                description2=""
-              />
-              <PringOption
-                className=""
-                title="Pro Plan"
-                duration="Per year"
-                price="29"
-                description1="Unlimited autostatuses"
-                description2="Google Calendar Integration"
-              />
-              <PringOption
-                className=""
-                title="Business Plan"
-                duration="Per year"
-                price="499"
-                description1="Pro plans for your entire Slack workspace with unlimited users "
-                description2=""
-              />
-            </div>
-          ) : (
-            <div className="flex gap-6">
-              <PringOption
-                className=""
-                title="Free Plan"
-                duration="Per Month"
-                price="0"
-                description1="1 active autostatus"
-                description2=""
-              />
-              <PringOption
-                className=""
-                title="Pro Plan"
-                duration="Per Month"
-                price="3.99"
-                description1="Unlimited autostatuses"
-                description2="Google Calendar Integration"
-              />
-              <PringOption
-                className=""
-                title="Business Plan"
-                duration="Per Month"
-                price="49"
-                description1="Pro plans for your entire Slack workspace with unlimited users "
-                description2=""
-              />
-            </div>
-          )}
+          <div className="flex gap-6 flex-wrap">
+            <PringOption
+              className=""
+              title="Free Plan"
+              duration={isToggled ? "Per year" : "Per month"}
+              price="0"
+              description1="1 active autostatus"
+              description2=""
+            />
+            <PringOption
+              className=""
+              title="Pro Plan"
+              duration={isToggled ? "Per year" : "Per month"}
+              price={isToggled ? "29" : "3.99"}
+              description1="Unlimited autostatuses"
+              description2="Google Calendar Integration"
+            />
+            <PringOption
+              className=""
+              title="Business Plan"
+              duration={isToggled ? "Per year" : "Per month"}
+              price={isToggled ? "499" : "49"}
+              description1="Pro plans for your entire Slack workspace with unlimited users "
+              description2=""
+            />
+          </div>
         </div>
         {/* FAQ */}
-        <div className="mb-[60px] px-[92px]">
+        <div className="mb-[60px] lg:px-[92px]">
           <TextTag
             as="h3"
             text={"FAQ"}
@@ -513,16 +500,16 @@ const Index = () => {
           </div>
         </div>
         {/* Start making Slack */}
-        <div className="py-[296px] flex justify-center">
+        <div className="md:py-[296px] py-[129px] flex justify-center">
           <div className="max-w-[576px] flex flex-col items-center">
             <img src={LineVector1} alt="lineImg" className="mb-[41.9px]" />
             <TextTag
               as="h3"
               text={"Start making slack work for you"}
-              className={"h3 !leading-[52px] mb-8"}
+              className={"h3 !leading-[52px] mb-8 text-center"}
               color={""}
             />
-            <button className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 mb-[60px]">
+            <button className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 md:mb-[60px]">
               <img src={AddSlack} alt="add_Slack_icon" className="mb-0" />
               <p className="p-medium !font-normal mb-0 gap-2">
                 Add to <span className="!font-semibold">Slack</span>
@@ -532,27 +519,27 @@ const Index = () => {
         </div>
         {/* Contact Us */}
       </div>
-      <div className="bg-Black pt-16 px-[180px] pb-[90px]">
-        <div className="flex justify-between">
+      <div className="bg-Black pt-16 lg:px-[180px] md:px-[150px] pb-[90px]">
+        <div className="flex md:justify-between justify-center">
           <Link to={"#"}>
             <img src={siteTitle} alt="site title" />
           </Link>
-          <ul className="flex justify-between items-center gap-[24px]">
+          <ul className="md:flex justify-between items-center md:gap-[24px] hidden">
             <li>
               <a
                 id="#"
-                className="no-underline p-medium !font-medium text-White"
+                className="no-underline p-medium !font-medium text-White inter"
               >
                 Pricing
               </a>
             </li>
             <li>
-              <a className="no-underline p-medium !font-medium text-White">
+              <a className="no-underline p-medium !font-medium text-White inter">
                 FAQ
               </a>
             </li>
             <li>
-              <a className="no-underline p-medium !font-medium text-White">
+              <a className="no-underline p-medium !font-medium text-White inter">
                 Contact Us
               </a>
             </li>
@@ -561,7 +548,9 @@ const Index = () => {
         <TextTag
           as="h3"
           text={"Contatct us"}
-          className={"h3 !leading-[52px] text-center mb-8"}
+          className={
+            "h3 !leading-[52px] text-center md:mb-8 mb-[42px] md:mt-0 mt-[88px]"
+          }
           color={"text-White"}
         />
         <Formik
@@ -596,7 +585,7 @@ const Index = () => {
           }) => (
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col gap-4 items-center"
+              className="flex flex-col gap-4 items-center md:px-0 px-4"
             >
               <input
                 type="text"
@@ -605,7 +594,7 @@ const Index = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.text}
-                className="p-[14px] border border-solid border-Grey-500 rounded-xl w-[344px] p-medium1 !font-semibold bg-transparent text-White"
+                className="inter p-[14px] border border-solid border-Grey-500 rounded-xl md:w-[344px] w-full p-medium1 !font-semibold bg-transparent text-White"
               />
               {errors.text && touched.text && errors.text}
               <input
@@ -615,17 +604,17 @@ const Index = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
-                className="p-[14px] border border-solid border-Grey-500 rounded-xl w-[344px] p-medium1 !font-semibold bg-transparent"
+                className="inter p-[14px] border border-solid border-Grey-500 rounded-xl md:w-[344px] w-full p-medium1 !font-semibold bg-transparent"
               />
               {errors.email && touched.email && errors.email}
               <textarea
                 placeholder="Your Message"
-                className="min-h-[144px] p-[14px] border border-solid border-Grey-500 rounded-xl w-[344px] p-medium1 !font-semibold bg-transparent text-White"
+                className="inter min-h-[144px] p-[14px] border border-solid border-Grey-500 rounded-xl md:w-[344px] w-full p-medium1 !font-semibold bg-transparent text-White"
               ></textarea>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-[344px] bg-Purple text-center py-[14px] rounded-xl border-none p-medium1 text-White"
+                className="inter md:w-[344px] w-full bg-Purple text-center py-[14px] rounded-xl border-none p-medium1 text-White"
               >
                 Submit
               </button>

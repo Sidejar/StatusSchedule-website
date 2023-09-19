@@ -48,7 +48,7 @@ const Index = ({
             <TextTag
               as="p"
               text={UserStatus}
-              className="p-small mb-0"
+              className="p-small mb-0 inter"
               color="text-Grey-400"
             />
           </div>
