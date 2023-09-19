@@ -30,9 +30,9 @@ const Footer = () => {
           </Link>
         </div>
         <span className="p-samll text-White flex items-center inter">
-          built with <img src={Heart} alt="heart's-emojie" className="mb-0" />{" "}
-          by
-          <img src={Pin} alt="pin-logo" className="mb-0" /> SideJar
+          built with
+          <img src={Heart} alt="heart's-emojie" className="mb-0 mx-1" /> by
+          <img src={Pin} alt="pin-logo" className="mb-0 mx-1" /> SideJar
         </span>
       </div>
     </div>

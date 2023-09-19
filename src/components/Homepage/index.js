@@ -50,6 +50,7 @@ import LineVector1 from "../../assets/images/icons/lineVector1.svg"
 import siteTitle from "../../assets/images/icons/siteTitle.svg"
 import UserStatusVector from "../../assets/images/icons/userStatusVector.svg"
 import ScheduleVector from "../../assets/images/icons/scheduleVector.svg"
+import CalendarVector from "../../assets/images/icons/calendarVector.svg"
 
 const userData = [
   {
@@ -149,7 +150,7 @@ const userData = [
     userStatus: "Birthday",
   },
 ]
-const Index = ({ isMenuOpen }) => {
+const Index = () => {
   // const userStatus = {
   //   backgroundImage: `url("../../assets/images/icons/userStatusVector.svg")`,
   //   backgroundRepeat: "no-repeat",
@@ -171,15 +172,17 @@ const Index = ({ isMenuOpen }) => {
       <div className="max-w-[1440px] mx-auto lg:px-[180px] md:px-[120px] sm:px-[80px] px-[16px]">
         {/* Hero section */}
         <div className="flex flex-col items-center text-center">
-          <h2 className="md:h2 h2-res mb-[29px] ">
-            Automate your slack
-            <TextTag
-              as="span"
-              text={" status."}
-              className="h2"
-              color="text-Purple"
-            />
-          </h2>
+          <div className="md:h2 h2-res mb-[29px] flex items-baseline flex-wrap">
+            <span>Automate your slack</span>
+            <div className="relative">
+              <h2 className="ml-3 h2 text-Purple "> status.</h2>
+              <img
+                src={StatusUnderline}
+                alt="StatusUnderline"
+                className="absolute bottom-[-33px] right-0"
+              />
+            </div>
+          </div>
           <TextTag
             as="p"
             text={"No more forgetting to set a Slack status when you’re away."}
@@ -225,7 +228,7 @@ const Index = ({ isMenuOpen }) => {
         </div>
         {/* Build Schedule */}
         <div className="flex !items-center md:flex-nowrap flex-wrap md:gap-[116px] gap-[88px] md:mb-[106px] mb-[135px]">
-          <div className="md:w-[436px] w-full max-h-[470px] py-10 px-7 rounded-[24px] border border-solid border-Grey-300">
+          <div className="md:w-[436px] w-full max-h-[470px] pt-10 px-7 rounded-[24px] border border-solid border-Grey-300 relative">
             <div className="flex mb-10 justify-between">
               <TextTag
                 as="h4"
@@ -298,6 +301,11 @@ const Index = ({ isMenuOpen }) => {
                 />
               </div>
             )}
+            <img
+              src={ScheduleVector}
+              alt="ScheduleVector"
+              className="absolute md:w-[106px] w-[115px] md:h-[96px] h-12 md:top-[124px] top-[-22px] md:left-[-92px] left-[-36px]"
+            />
           </div>
           <div className="">
             <TextTag
@@ -334,7 +342,7 @@ const Index = ({ isMenuOpen }) => {
               color={"Grey-400"}
             />
           </div>
-          <div className="md:w-[436px] w-full h-[475px] py-10 md:px-7 pr-[19px] pl-[28px] rounded-[24px] border border-solid border-Grey-300">
+          <div className="md:w-[436px] w-full h-[475px] py-10 md:px-7 pr-[19px] pl-[28px] rounded-[24px] border border-solid border-Grey-300 relative">
             <div className="flex flex-wrap mb-[35px] gap-4">
               <TextTag as="h4" text={"Google Calendar"} className={"h4"} />
               <button className="p-xsmall rounded-[8px] py-[2px] px-2 text-Green-500 bg-Green-400 inter">
@@ -386,6 +394,11 @@ const Index = ({ isMenuOpen }) => {
               StatusEmojie=""
               UserStatus="04:15 PM - 04:30 PM"
               menuIcon={false}
+            />
+            <img
+              src={CalendarVector}
+              alt="CalendarVector"
+              className="absolute md:w-[106px] w-[115px] md:h-[96px] h-12 md:top-[73px] top-[-22px] md:right-[-63px] right-[42%]"
             />
           </div>
         </div>
@@ -517,10 +530,10 @@ const Index = ({ isMenuOpen }) => {
             </button>
           </div>
         </div>
-        {/* Contact Us */}
       </div>
+      {/* Contact Us */}
       <div className="bg-Black pt-16 lg:px-[180px] md:px-[150px] pb-[90px]">
-        <div className="flex md:justify-between justify-center">
+        <div className="flex md:justify-between justify-center items-center">
           <Link to={"#"}>
             <img src={siteTitle} alt="site title" />
           </Link>

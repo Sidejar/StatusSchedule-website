@@ -14,7 +14,7 @@ const Index = ({
 }) => {
   return (
     <div
-      className={`md:w-[344px] w-full h-[543px] p-[42px] rounded-3xl border hover:border-none border-solid border-Grey-300 hover:bg-Purple hover:text-White transition-all ease-in-out duration-200 md:mt-[42px] md:hover:mt-0 mt-0 ${className}`}
+      className={`md:w-[344px] w-full h-[543px] p-[44px] rounded-3xl border hover:border-none border-solid border-Grey-300 hover:bg-Purple hover:text-White transition-all ease-in-out duration-300 md:mt-[42px] md:hover:mt-0 mt-0 hover:bg-[url('../../assets/images/icons/spiderPattern.svg')] bg-cover bg-center ${className}`}
     >
       <div className="flex flex-col items-center">
         <TextTag
