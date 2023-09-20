@@ -151,12 +151,12 @@ const userData = [
   },
 ]
 const Index = () => {
-  // const userStatus = {
-  //   backgroundImage: `url("../../assets/images/icons/userStatusVector.svg")`,
-  //   backgroundRepeat: "no-repeat",
-  //   backgroundSize: "cover",
-  //   backgroundPosition: "center",
-  // }
+  const userStatus = {
+    backgroundImage: `url("../../assets/images/icons/userStatusVector.svg")`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }
   const [showUserStatus, setShowUserStatus] = useState(false)
 
   const toggleUserStatus = () => {
@@ -172,16 +172,16 @@ const Index = () => {
       <div className="max-w-[1440px] mx-auto lg:px-[180px] md:px-[120px] sm:px-[80px] px-[16px]">
         {/* Hero section */}
         <div className="flex flex-col items-center text-center">
-          <div className="md:h2 h2-res mb-[29px] flex items-baseline flex-wrap">
-            <span>Automate your slack</span>
-            <div className="relative">
-              <h2 className="ml-3 h2 text-Purple "> status.</h2>
+          <div className="md:h2 h2-res mb-[29px] flex items-baseline justify-center flex-wrap">
+            <div>Automate your slack</div>
+            <span className="flex flex-col items-baseline">
+              <h2 className="ml-3 h2 text-Purple"> status.</h2>
               <img
                 src={StatusUnderline}
                 alt="StatusUnderline"
-                className="absolute bottom-[-33px] right-0"
+                className="mb-0"
               />
-            </div>
+            </span>
           </div>
           <TextTag
             as="p"
@@ -205,14 +205,11 @@ const Index = () => {
           </button>
         </div>
         {/* User Status */}
-        <div
-          className="md:pt-124px md:mb-[203px] md:mt-[60px] mb-[166px] flex flex-wrap justify-around"
-          // style={userStatus}
-        >
+        <div className="md:pt-124px md:mb-[203px] md:mt-[60px] mb-[166px] flex flex-wrap gap-[33px] justify-around bg-[url('../../assets/images/icons/userStatusVector.svg')] bg-cover bg-center">
           {userData?.map((data, index) => (
             <div key={index}>
               <UserStatus
-                className="max-w-[257px] !pr-8"
+                className="max-w-[257px] !pr-8 bg-White"
                 userInfoStyle="!gap-4"
                 UserIcon={data.userIcon}
                 onlineStatus={true}
@@ -227,7 +224,7 @@ const Index = () => {
           ))}
         </div>
         {/* Build Schedule */}
-        <div className="flex !items-center md:flex-nowrap flex-wrap md:gap-[116px] gap-[88px] md:mb-[106px] mb-[135px]">
+        <div className="flex !items-center md:flex-nowrap flex-wrap lg:gap-[116px] md:gap-[50px] gap-[88px] md:mb-[106px] mb-[135px]">
           <div className="md:w-[436px] w-full max-h-[470px] pt-10 px-7 rounded-[24px] border border-solid border-Grey-300 relative">
             <div className="flex mb-10 justify-between">
               <TextTag
@@ -252,7 +249,7 @@ const Index = () => {
             {showUserStatus && (
               <div className="flex flex-col gap-3 ">
                 <UserStatus
-                  className="max-w-[380px] bg-White"
+                  className="w-full bg-White"
                   userInfoStyle="!gap-4"
                   UserIcon={BusIcon}
                   onlineStatus={false}
@@ -264,7 +261,7 @@ const Index = () => {
                   menuIcon={true}
                 />
                 <UserStatus
-                  className="max-w-[380px]  bg-White"
+                  className="w-full  bg-White"
                   userInfoStyle="!gap-4"
                   UserIcon={MikeIcon}
                   onlineStatus={false}
@@ -276,7 +273,7 @@ const Index = () => {
                   menuIcon={true}
                 />
                 <UserStatus
-                  className="max-w-[380px]  bg-White"
+                  className="w-full  bg-White"
                   userInfoStyle="!gap-4"
                   UserIcon={LunchIcon}
                   onlineStatus={false}
@@ -288,7 +285,7 @@ const Index = () => {
                   menuIcon={true}
                 />
                 <UserStatus
-                  className="max-w-[380px]  bg-White"
+                  className="w-full  bg-White"
                   userInfoStyle="!gap-4"
                   UserIcon={MeetingIcon}
                   onlineStatus={false}
@@ -304,7 +301,7 @@ const Index = () => {
             <img
               src={ScheduleVector}
               alt="ScheduleVector"
-              className="absolute md:w-[106px] w-[115px] md:h-[96px] h-12 md:top-[124px] top-[-22px] md:left-[-92px] left-[-36px]"
+              className="absolute md:w-[106px] w-[115px] md:h-[96px] h-12 md:top-[25%] top-[-22px] md:left-[-92px] left-[-36px]"
             />
           </div>
           <div className="">
@@ -355,7 +352,7 @@ const Index = () => {
               className="p-large !leading-[40px] !tracking-[-0.36px] mb-3"
             />
             <UserStatus
-              className="max-w-[380px] !pr-8 mb-[42px]  bg-White"
+              className="w-full !pr-8 mb-[42px]  bg-White"
               userInfoStyle="!gap-4"
               UserIcon={CalendarIcon}
               onlineStatus={false}
@@ -372,7 +369,7 @@ const Index = () => {
               className="p-large !leading-[40px] !tracking-[-0.36px] mb-3"
             />
             <UserStatus
-              className="max-w-[380px] !pr-8 mb-3 bg-White"
+              className="w-full !pr-8 mb-3 bg-White"
               userInfoStyle="!gap-4"
               UserIcon={CalendarIcon}
               onlineStatus={false}
@@ -384,7 +381,7 @@ const Index = () => {
               menuIcon={false}
             />
             <UserStatus
-              className="max-w-[380px] !pr-8 mb-3 bg-White"
+              className="w-full !pr-8 mb-3 bg-White"
               userInfoStyle="!gap-4"
               UserIcon={CalendarIcon}
               onlineStatus={false}
@@ -476,7 +473,7 @@ const Index = () => {
           </div>
         </div>
         {/* FAQ */}
-        <div className="mb-[60px] lg:px-[92px]">
+        <div className="mb-[60px] xl:px-[92px]">
           <TextTag
             as="h3"
             text={"FAQ"}

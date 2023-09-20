@@ -25,7 +25,7 @@ const Index = ({
           }
           color={""}
         />
-        <div className="flex items-start gap-3">
+        <div className="flex items-start justify-center w-full">
           <TextTag
             as="h4"
             text={"$"}
