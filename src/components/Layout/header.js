@@ -37,7 +37,7 @@ const Header = ({ siteTitle }) => {
         >
           <li className="mb-0">
             <a
-              href="#"
+              href="#pricing"
               className="no-underline p-medium !font-medium text-Black inter"
             >
               Pricing
@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => {
           </li>
           <li className="mb-0">
             <a
-              href="#"
+              href="#FAQ"
               className="no-underline p-medium !font-medium text-Black inter"
             >
               FAQ
@@ -53,7 +53,7 @@ const Header = ({ siteTitle }) => {
           </li>
           <li className="mb-0">
             <a
-              href="#"
+              href="#contactUs"
               className="no-underline p-medium !font-medium text-Black inter"
             >
               Contact Us

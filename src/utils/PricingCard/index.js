@@ -2,7 +2,6 @@ import React from "react"
 import { TextTag } from "../Typography"
 
 import RightArrowIcon from "../../assets/images/icons/rightArrowIcon.svg"
-import { Link } from "gatsby"
 
 const Index = ({
   className,
@@ -11,6 +10,7 @@ const Index = ({
   price,
   description1,
   description2,
+  onClick,
 }) => {
   return (
     <div
@@ -63,21 +63,22 @@ const Index = ({
             color={""}
           />
         </div>
-        <div className="py-[14px] pr-[10px] pl-5 bg-White rounded-xl flex items-center justify-between mx-auto w-[173px] border hover:border-none border-solid border-Grey-300">
+        <button
+          className="py-[14px] pr-[10px] pl-5 bg-White rounded-xl flex items-center justify-between mx-auto w-[173px] border hover:border-none border-solid border-Grey-300"
+          onClick={onClick}
+        >
           <TextTag
             as="p"
             text={"Get Started"}
             className={"p-medium !leading-[24px] mb-0 inter"}
             color={"text-Purple"}
           />
-          <Link to={"#"}>
-            <img
-              src={RightArrowIcon}
-              alt="rightArrowIcon"
-              className="p-[6px] border border-solid border-Purple rounded-full mb-0"
-            />
-          </Link>
-        </div>
+          <img
+            src={RightArrowIcon}
+            alt="rightArrowIcon"
+            className="p-[6px] border border-solid border-Purple rounded-full mb-0"
+          />
+        </button>
       </div>
     </div>
   )

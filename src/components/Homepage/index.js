@@ -197,7 +197,10 @@ const Index = () => {
             className="p-medium !font-normal mb-[32px]"
             color="text-Grey-400"
           />
-          <button className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 mb-[60px]">
+          <button
+            className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 mb-[60px]"
+            onClick={() => {}}
+          >
             <img src={AddSlack} alt="add_Slack_icon" className="mb-0" />
             <p className="p-medium !font-normal mb-0 gap-2">
               Add to <span className="!font-semibold">Slack</span>
@@ -342,7 +345,10 @@ const Index = () => {
           <div className="md:w-[436px] w-full h-[475px] py-10 md:px-7 pr-[19px] pl-[28px] rounded-[24px] border border-solid border-Grey-300 relative">
             <div className="flex flex-wrap mb-[35px] gap-4">
               <TextTag as="h4" text={"Google Calendar"} className={"h4"} />
-              <button className="p-xsmall rounded-[8px] py-[2px] px-2 text-Green-500 bg-Green-400 inter">
+              <button
+                className="p-xsmall rounded-[8px] py-[2px] px-2 text-Green-500 bg-Green-400 inter"
+                onClick={() => {}}
+              >
                 Connected
               </button>
             </div>
@@ -400,7 +406,7 @@ const Index = () => {
           </div>
         </div>
         {/* Pricing */}
-        <div className="flex flex-col items-center mb-[180px]">
+        <div className="flex flex-col items-center mb-[180px]" id="pricing">
           <TextTag
             as="h3"
             text={"Pricing options"}
@@ -453,6 +459,7 @@ const Index = () => {
               price="0"
               description1="1 active autostatus"
               description2=""
+              onClick={() => {}}
             />
             <PringOption
               className=""
@@ -461,6 +468,7 @@ const Index = () => {
               price={isToggled ? "29" : "3.99"}
               description1="Unlimited autostatuses"
               description2="Google Calendar Integration"
+              onClick={() => {}}
             />
             <PringOption
               className=""
@@ -469,11 +477,12 @@ const Index = () => {
               price={isToggled ? "499" : "49"}
               description1="Pro plans for your entire Slack workspace with unlimited users "
               description2=""
+              onClick={() => {}}
             />
           </div>
         </div>
         {/* FAQ */}
-        <div className="mb-[60px] xl:px-[92px]">
+        <div className="mb-[60px] xl:px-[92px]" id="FAQ">
           <TextTag
             as="h3"
             text={"FAQ"}
@@ -493,18 +502,21 @@ const Index = () => {
               question="Is this a subscription?"
               description="Yes, SlackedStatus is a subscription-based Slack app. You'll be charged on a monthly or yearly basis depending on your plan. We will also offer a free plan as well."
               link={false}
+              url="#"
               linkText=""
             />
             <FAQcard
               question="How can I provide this to my team?"
               description="A Business Plan will allow you to offer Slackedstatus to your entire Slack Workspace, no matter how many users. Every member of your team will enjoy a Pro Plan of Slackedstatus."
               link={false}
+              url="#"
               linkText=""
             />
             <FAQcard
               question="How can i connect my calendar?"
               description="First, you'll need a Pro Plan to utilize the calendar integrations. You can integrate your calendar directly inside of the Slack app. For more information on how to set it up, check out"
               link={true}
+              url="#"
               linkText="this article."
             />
           </div>
@@ -519,7 +531,10 @@ const Index = () => {
               className={"h3 !leading-[52px] mb-8 text-center"}
               color={""}
             />
-            <button className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 md:mb-[60px]">
+            <button
+              className="border-2 border-solid border-Blue-400 rounded-[3px] flex gap-2 p-2 md:mb-[60px]"
+              onClick={() => {}}
+            >
               <img src={AddSlack} alt="add_Slack_icon" className="mb-0" />
               <p className="p-medium !font-normal mb-0 gap-2">
                 Add to <span className="!font-semibold">Slack</span>
@@ -529,7 +544,10 @@ const Index = () => {
         </div>
       </div>
       {/* Contact Us */}
-      <div className="bg-Black pt-16 lg:px-[180px] md:px-[150px] pb-[90px]">
+      <div
+        className="bg-Black pt-16 lg:px-[180px] md:px-[150px] pb-[90px]"
+        id="contactUs"
+      >
         <div className="flex md:justify-between justify-center items-center">
           <Link to={"#"}>
             <img src={siteTitle} alt="site title" />
@@ -537,19 +555,25 @@ const Index = () => {
           <ul className="md:flex justify-between items-center md:gap-[24px] hidden">
             <li>
               <a
-                id="#"
+                href="#pricing"
                 className="no-underline p-medium !font-medium text-White inter"
               >
                 Pricing
               </a>
             </li>
             <li>
-              <a className="no-underline p-medium !font-medium text-White inter">
+              <a
+                href="#FAQ"
+                className="no-underline p-medium !font-medium text-White inter"
+              >
                 FAQ
               </a>
             </li>
             <li>
-              <a className="no-underline p-medium !font-medium text-White inter">
+              <a
+                href="#contactUs"
+                className="no-underline p-medium !font-medium text-White inter"
+              >
                 Contact Us
               </a>
             </li>

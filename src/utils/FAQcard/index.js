@@ -1,7 +1,7 @@
 import React from "react"
 import { TextTag } from "../Typography"
 
-const Index = ({ question, description, link, linkText }) => {
+const Index = ({ question, description, link, url, linkText }) => {
   return (
     <div className="w-full p-8 border border-solid border-Grey-300 rounded-3xl">
       <TextTag
@@ -13,7 +13,12 @@ const Index = ({ question, description, link, linkText }) => {
         color={""}
       />
       <p className="p-medium !font-normal text-Grey-400 mb-0 inter">
-        {description} {link && <a className="text-Misty-500">{linkText}</a>}
+        {description}{" "}
+        {link && (
+          <a className="text-Misty-500 cursor-pointer" href={url}>
+            {linkText}
+          </a>
+        )}
       </p>
     </div>
   )
